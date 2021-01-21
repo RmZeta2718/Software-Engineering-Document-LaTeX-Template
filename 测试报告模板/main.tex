@@ -5,6 +5,7 @@
 % bachelor|master|doctor
 \usepackage{ustcextra}
 \usepackage{tabularx}
+\usepackage{pifont} % http://ctan.org/pkg/pifont
 \graphicspath{{figures/}}
 \bibliographystyle{ustcauthoryear}
 % \bibliographystyle{ustcnumerical}
@@ -22,9 +23,13 @@
     \headrule
     \footrule
 }
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  
-\newcommand{\checkbox}{$\text{\rlap{$\checkmark$}}\square$}
 \renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering tabularx text in X column
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\checkbox}{$\text{\rlap{$\checkmark$}}\square$}
+\newcommand{\emptybox}{$\Box$}
 
 \begin{document}
 
@@ -49,7 +54,7 @@
             \hline
             完成日期 & \today \\ 
             \hline
-            文件状态 & \tabincell{l}{ $\Box$ 征求意见稿 \\ $\Box$ 正式发布}\\
+            文件状态 & \tabincell{l}{ \emptybox 征求意见稿 \\ \checkbox 正式发布}\\
             \hline
         \end{tabular} \\[5cm]
         {\large \bfseries 华东师范大学计算机科学与技术学院}
